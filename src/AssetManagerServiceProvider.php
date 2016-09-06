@@ -22,8 +22,8 @@ class AssetManagerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/asset-manager.php.php' => config_path('asset-manager.php'),
-        ]);
+            __DIR__.'/../config/asset-manager.php' => config_path('asset-manager.php'),
+        ], 'config');
 
         Blade::directive('css', function($libs) {
             return "<?php echo app('asset-manager')->css($libs) ?>";
