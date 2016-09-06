@@ -10,9 +10,9 @@ namespace Thesudoteam\AssetManager;
 
 
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class AssetManagerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
