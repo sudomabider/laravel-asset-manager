@@ -1,6 +1,6 @@
 1. Run `composer require thesudoteam/laravel-asset-manager`
-2. Add `Thesudoteam\AssetManager\ServiceProvider::class` to app config
-3. Run `php artisan vendor:publish --provider="Thesudoteam\AssetManager\ServiceProvider" --tag="config"`
+2. Add `Thesudoteam\AssetManager\AssetManagerServiceProvider::class` to app config
+3. Run `php artisan vendor:publish --provider="Thesudoteam\AssetManager\AssetManagerServiceProvider" --tag="config"`
 
 ### Example usages
 ___config/asset-manager.php___
