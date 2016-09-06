@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Thesudoteam\\AssetManager": "src/"
+      "Thesudoteam\\AssetManager\\": "src/"
     }
   }
 }
