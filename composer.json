@@ -1,0 +1,25 @@
+{
+  "name": "thesudoteam/laravel-asset-manager",
+  "description": "Allows for assets like js and css to be easily managed and called in Laravel",
+  "version": "0.1",
+  "keywords": ["Laravel", "assets", "css", "js"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Veo Chen",
+      "email": "sudomabider@sudo.team"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "illuminate/support": "5.*"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Thesudoteam\\AssetManager": "src/"
+    }
+  }
+}
