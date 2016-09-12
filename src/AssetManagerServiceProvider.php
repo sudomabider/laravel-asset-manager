@@ -25,7 +25,6 @@ class AssetManagerServiceProvider extends ServiceProvider
             __DIR__.'/../config/asset-manager.php' => config_path('asset-manager.php'),
         ], 'config');
 
-<<<<<<< HEAD
         Blade::directive('css', function($expression) {
             $expression = $this->parseExpression($expression);
             return "<?php echo app('asset-manager')->css($expression) ?>";
@@ -34,19 +33,10 @@ class AssetManagerServiceProvider extends ServiceProvider
         Blade::directive('js', function($expression) {
             $expression = $this->parseExpression($expression);
             return "<?php echo app('asset-manager')->js($expression) ?>";
-=======
-        Blade::directive('css', function($libs) {
-            return "<?php echo app('asset-manager')->css($libs) ?>";
-        });
-
-        Blade::directive('js', function($libs) {
-            return "<?php echo app('asset-manager')->js($libs) ?>";
->>>>>>> 4edf1b172eb1e7e07554ae892db68ccf69083583
         });
     }
 
     /**
-<<<<<<< HEAD
      * @param $expression
      * @return array
      */
@@ -62,8 +52,6 @@ class AssetManagerServiceProvider extends ServiceProvider
     }
 
     /**
-=======
->>>>>>> 4edf1b172eb1e7e07554ae892db68ccf69083583
      * Register the application services.
      *
      * @return void
