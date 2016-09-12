@@ -1,7 +1,7 @@
 {
   "name": "thesudoteam/laravel-asset-manager",
   "description": "Allows for assets like js and css to be easily managed and called in Laravel",
-  "version": "0.1",
+  "version": "0.1.2",
   "keywords": ["Laravel", "assets", "css", "js"],
   "license": "MIT",
   "authors": [
