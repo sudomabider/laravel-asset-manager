@@ -26,7 +26,7 @@ class AssetManager
     {
         $html = '';
         foreach ($libs as $lib) {
-            $html .= $this->makeLibCss($lib);
+            $html .= $this->makeCssLib($lib);
         }
 
         return $html;
@@ -36,7 +36,7 @@ class AssetManager
     {
         $html = '';
         foreach ($libs as $lib) {
-            $html .= $this->makeLibJs($lib);
+            $html .= $this->makeJsLib($lib);
         }
 
         return $html;
@@ -46,7 +46,7 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeLibCss($lib):string
+    private function makeCssLib($lib):string
     {
         $html = '';
 
@@ -74,27 +74,58 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeLibJs($lib):string
+    private function makeJsLib($lib):string
     {
-        $html = '';
-
         if (ends_with($lib, '.js')) {
-            return "<script type='text/javascript' src='$lib'></script>\n";
+            return $this->generateJsLink($lib);
         }
 
         if (!isset($this->assets[$lib]['js'])) {
-            return $html;
+            return '';
         }
 
         $js = $this->assets[$lib]['js'];
+
         if (is_array($js)) {
-            foreach ($js as $path) {
-                $html .= "<script type='text/javascript' src='$path'></script>\n";
+
+            $html = '';
+
+            foreach ($js as $asset) {
+                $html .= $this->parseJsAsset($asset);
             }
         } else {
-            $html = "<script type='text/javascript' src='$js'></script>\n";;
+            $html = $this->generateJsLink($js);
         }
 
         return $html;
+    }
+
+    private function parseJsAsset($asset)
+    {
+        if (! is_array($asset)) {
+            return $this->generateJsLink($asset);
+        }
+
+        if (isset($asset[1]) AND is_array($asset[1])) {
+            return $this->generateJsLink($asset[0], $asset[1]);
+        }
+    }
+
+    private function generateJsLink($url, array $options = [])
+    {
+        if (! $options) {
+            return "<script type='text/javascript' src='$url'></script>\n";
+        }
+
+        $options_html = '';
+        foreach ($options as $key => $value) {
+            $options_html .= " " . $key . "='" . $value . "'";
+        }
+
+        if (! key_exists('type', $options)) {
+            $options_html .= " type='text/javascript'";
+        }
+
+        return "<script" . $options_html . " src='$url'></script>\n";
     }
 }
