@@ -6,8 +6,7 @@
  * Time: 10:21 PM
  */
 
-namespace Thesudoteam\AssetManager;
-
+namespace Sudomabider\AssetManager;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

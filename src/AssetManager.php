@@ -6,7 +6,7 @@
  * Time: 4:53 PM
  */
 
-namespace Thesudoteam\AssetManager;
+namespace Sudomabider\AssetManager;
 
 
 class AssetManager

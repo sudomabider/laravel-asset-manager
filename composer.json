@@ -1,7 +1,7 @@
 {
-  "name": "thesudoteam/laravel-asset-manager",
+  "name": "sudomabider/laravel-asset-manager",
   "description": "Allows for assets like js and css to be easily managed and called in Laravel",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": ["Laravel", "assets", "css", "js"],
   "license": "MIT",
   "authors": [
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Thesudoteam\\AssetManager\\": "src/"
+      "Sudomabider\\AssetManager\\": "src/"
     }
   }
 }
