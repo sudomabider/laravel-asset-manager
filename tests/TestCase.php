@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: veoc
  * Date: 28/01/17
- * Time: 5:51 PM
+ * Time: 5:51 PM.
  */
 
 namespace Sudomabider\AssetManager\Tests;
@@ -19,21 +19,21 @@ class TestCase extends BaseTestCase
         $app['config']->set('asset-manager.assets', [
             'local' => [
                 'css' => 'css/local.css',
-                'js' => 'js/local.js'
+                'js'  => 'js/local.js',
             ],
 
             'simple' => [
                 'css' => 'https://example.com/simple.css',
-                'js' => 'https://example.com/simple.js'
+                'js'  => 'https://example.com/simple.js',
             ],
 
             'simple-one' => [
                 'css' => 'https://example.com/simple-one.css',
-                'js' => 'https://example.com/simple-one.js'
+                'js'  => 'https://example.com/simple-one.js',
             ],
             'simple-two' => [
                 'css' => 'https://example.com/simple-two.css',
-                'js' => 'https://example.com/simple-two.js'
+                'js'  => 'https://example.com/simple-two.js',
             ],
 
             'multiple' => [
@@ -43,8 +43,8 @@ class TestCase extends BaseTestCase
                 ],
                 'js' => [
                     'https://example.com/multiple-a.js',
-                    'https://example.com/multiple-b.js'
-                ]
+                    'https://example.com/multiple-b.js',
+                ],
             ],
 
             'multiple-one' => [
@@ -54,8 +54,8 @@ class TestCase extends BaseTestCase
                 ],
                 'js' => [
                     'https://example.com/multiple-one-a.js',
-                    'https://example.com/multiple-one-b.js'
-                ]
+                    'https://example.com/multiple-one-b.js',
+                ],
             ],
             'multiple-two' => [
                 'css' => [
@@ -64,9 +64,9 @@ class TestCase extends BaseTestCase
                 ],
                 'js' => [
                     'https://example.com/multiple-two-a.js',
-                    'https://example.com/multiple-two-b.js'
-                ]
-            ]
+                    'https://example.com/multiple-two-b.js',
+                ],
+            ],
         ]);
     }
 
