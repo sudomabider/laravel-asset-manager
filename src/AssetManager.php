@@ -46,12 +46,12 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeCssLib($lib)
+    protected function makeCssLib($lib)
     {
         $html = '';
 
         if (ends_with($lib, '.css')) {
-            return "<link rel='stylesheet' type='text/css' href='$lib'/>\n";
+            return $this->generateCssLink($lib);
         }
 
         if (!isset($this->assets[$lib]['css'])) {
@@ -61,10 +61,10 @@ class AssetManager
         $css = $this->assets[$lib]['css'];
         if (is_array($css)) {
             foreach ($css as $path) {
-                $html .= "<link rel='stylesheet' type='text/css' href='$path'/>\n";
+                $html .= $this->generateCssLink($path);
             }
         } else {
-            $html = "<link rel='stylesheet' type='text/css' href='$css'/>\n";
+            $html = $this->generateCssLink($css);
         }
 
         return $html;
@@ -74,7 +74,7 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeJsLib($lib)
+    protected function makeJsLib($lib)
     {
         if (ends_with($lib, '.js')) {
             return $this->generateJsLink($lib);
@@ -100,7 +100,7 @@ class AssetManager
         return $html;
     }
 
-    private function parseJsAsset($asset)
+    protected function parseJsAsset($asset)
     {
         if (! is_array($asset)) {
             return $this->generateJsLink($asset);
@@ -111,8 +111,17 @@ class AssetManager
         }
     }
 
-    private function generateJsLink($url, array $options = [])
+    protected function generateCssLink($url, array $options = [])
     {
+        $url = $this->generateAbsoluteUrl($url);
+
+        return "<link rel='stylesheet' type='text/css' href='$url'/>\n";
+    }
+
+    protected function generateJsLink($url, array $options = [])
+    {
+        $url = $this->generateAbsoluteUrl($url);
+
         if (! $options) {
             return "<script type='text/javascript' src='$url'></script>\n";
         }
@@ -127,5 +136,14 @@ class AssetManager
         }
 
         return "<script" . $options_html . " src='$url'></script>\n";
+    }
+
+    protected function generateAbsoluteUrl($url)
+    {
+        if (starts_with($url, ['http://', 'https://', '//'])) {
+            return $url;
+        }
+
+        return url($url);
     }
 }

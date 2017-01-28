@@ -17,6 +17,11 @@ class TestCase extends BaseTestCase
     {
         $app['config']->set('view.paths', [__DIR__.'/resources/views']);
         $app['config']->set('asset-manager.assets', [
+            'local' => [
+                'css' => 'css/local.css',
+                'js' => 'js/local.js'
+            ],
+
             'simple' => [
                 'css' => 'https://example.com/simple.css',
                 'js' => 'https://example.com/simple.js'

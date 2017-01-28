@@ -1,5 +1,7 @@
 <html>
 <head>
+@css('local')
+
 @css('simple')
 
 @css('simple-one', 'simple-two')
@@ -9,6 +11,8 @@
 @css('multiple-one', 'multiple-two')
 </head>
 <body>
+@js('local')
+
 @js('simple')
 
 @js('simple-one', 'simple-two')

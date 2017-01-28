@@ -38,5 +38,8 @@ class ViewTest extends TestCase
         $this->assertCssExists("https://example.com/multiple-two-b.css", $html);
         $this->assertJsExists("https://example.com/multiple-two-a.js", $html);
         $this->assertJsExists("https://example.com/multiple-two-b.js", $html);
+
+        $this->assertCssExists("http://localhost/css/local.css", $html);
+        $this->assertJsExists("http://localhost/js/local.js", $html);
     }
 }
