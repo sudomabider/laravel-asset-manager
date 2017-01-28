@@ -1,6 +1,7 @@
 #Simple Asset Manager for Laravel
 
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![StyleCI](https://styleci.io/repos/67490711/shield?branch=master)](https://styleci.io/repos/67490711)
 
 ### Installation
 
