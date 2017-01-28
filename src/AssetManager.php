@@ -46,7 +46,7 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeCssLib($lib):string
+    private function makeCssLib($lib)
     {
         $html = '';
 
@@ -74,7 +74,7 @@ class AssetManager
      * @param $lib
      * @return string
      */
-    private function makeJsLib($lib):string
+    private function makeJsLib($lib)
     {
         if (ends_with($lib, '.js')) {
             return $this->generateJsLink($lib);
