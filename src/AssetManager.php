@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: veoc
  * Date: 31/08/16
- * Time: 4:53 PM
+ * Time: 4:53 PM.
  */
 
 namespace Sudomabider\AssetManager;
-
 
 class AssetManager
 {
@@ -15,6 +14,7 @@ class AssetManager
 
     /**
      * AssetManager constructor.
+     *
      * @param $assets
      */
     public function __construct($assets)
@@ -44,6 +44,7 @@ class AssetManager
 
     /**
      * @param $lib
+     *
      * @return string
      */
     protected function makeCssLib($lib)
@@ -72,6 +73,7 @@ class AssetManager
 
     /**
      * @param $lib
+     *
      * @return string
      */
     protected function makeJsLib($lib)
@@ -87,7 +89,6 @@ class AssetManager
         $js = $this->assets[$lib]['js'];
 
         if (is_array($js)) {
-
             $html = '';
 
             foreach ($js as $asset) {
@@ -102,11 +103,11 @@ class AssetManager
 
     protected function parseJsAsset($asset)
     {
-        if (! is_array($asset)) {
+        if (!is_array($asset)) {
             return $this->generateJsLink($asset);
         }
 
-        if (isset($asset[1]) AND is_array($asset[1])) {
+        if (isset($asset[1]) and is_array($asset[1])) {
             return $this->generateJsLink($asset[0], $asset[1]);
         }
     }
@@ -122,20 +123,20 @@ class AssetManager
     {
         $url = $this->generateAbsoluteUrl($url);
 
-        if (! $options) {
+        if (!$options) {
             return "<script type='text/javascript' src='$url'></script>\n";
         }
 
         $options_html = '';
         foreach ($options as $key => $value) {
-            $options_html .= " " . $key . "='" . $value . "'";
+            $options_html .= ' '.$key."='".$value."'";
         }
 
-        if (! key_exists('type', $options)) {
+        if (!array_key_exists('type', $options)) {
             $options_html .= " type='text/javascript'";
         }
 
-        return "<script" . $options_html . " src='$url'></script>\n";
+        return '<script'.$options_html." src='$url'></script>\n";
     }
 
     protected function generateAbsoluteUrl($url)

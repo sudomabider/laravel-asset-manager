@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: veoc
  * Date: 4/09/16
- * Time: 10:21 PM
+ * Time: 10:21 PM.
  */
 
 namespace Sudomabider\AssetManager;
@@ -24,19 +24,22 @@ class AssetManagerServiceProvider extends ServiceProvider
             __DIR__.'/../config/asset-manager.php' => config_path('asset-manager.php'),
         ], 'config');
 
-        Blade::directive('css', function($expression) {
+        Blade::directive('css', function ($expression) {
             $expression = $this->parseExpression($expression);
+
             return "<?php echo app('asset-manager')->css($expression) ?>";
         });
 
-        Blade::directive('js', function($expression) {
+        Blade::directive('js', function ($expression) {
             $expression = $this->parseExpression($expression);
+
             return "<?php echo app('asset-manager')->js($expression) ?>";
         });
     }
 
     /**
      * @param $expression
+     *
      * @return array
      */
     protected function parseExpression($expression)
@@ -57,11 +60,12 @@ class AssetManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/asset-manager.php';
+        $configPath = __DIR__.'/../config/asset-manager.php';
         $this->mergeConfigFrom($configPath, 'asset-manager');
 
-        $this->app->singleton('asset-manager', function() {
+        $this->app->singleton('asset-manager', function () {
             $assets = $this->app['config']->get('asset-manager.assets');
+
             return new AssetManager($assets);
         });
     }
