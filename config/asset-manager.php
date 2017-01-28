@@ -1,5 +1,12 @@
 <?php
 
 return [
-    'assets' => [],
+
+    'assets' => [
+        // A simple example
+        /*'<name>' => [
+            'css' => '<css url>',
+            'js' => '<js url>'
+        ]*/
+    ],
 ];

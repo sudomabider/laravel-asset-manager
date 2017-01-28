@@ -12,14 +12,21 @@
   ],
   "require": {
     "php": ">=5.4",
-    "illuminate/support": "5.*"
+    "illuminate/view": "5.*"
   },
   "require-dev": {
-
+    "fzaninotto/faker": "^1.6",
+    "orchestra/testbench": "3.3.3|~3.4.0",
+    "phpunit/phpunit": "^5.2"
   },
   "autoload": {
     "psr-4": {
-      "Sudomabider\\AssetManager\\": "src/"
+      "Sudomabider\\AssetManager\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sudomabider\\AssetManager\\Tests\\": "tests"
     }
   }
 }
