@@ -1,7 +1,7 @@
 {
   "name": "sudomabider/laravel-asset-manager",
   "description": "Allows for assets like js and css to be easily managed and called in Laravel",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": ["Laravel", "assets", "css", "js"],
   "license": "MIT",
   "authors": [
